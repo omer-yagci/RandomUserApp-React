@@ -1,27 +1,35 @@
 import React from "react";
+import classes from "../scss/card.module.scss";
 
 const Card = ({
   email,
-  picture: { medium },
+  picture: { large },
   phone,
   registered: { age, date },
   name: { title, first, last },
   location: { city, country },
 }) => {
   return (
-    <div className="card" style={{ width: "18rem" }}>
-      <img src={medium} className="card-img-top" alt={first} />
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+    <div className={classes.container}>
+      <img src={large} alt={first} />
+      <div>
+        <h5>
+          {title} {first} {last}
+        </h5>
       </div>
-      <ul className="list-group list-group-flush">
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">A second item</li>
-        <li className="list-group-item">A third item</li>
+      <ul>
+        <li>
+          <i className="fa-solid fa-envelope-open-text"></i> {email}
+        </li>
+        <li>
+          <i className="fa-solid fa-phone-volume"></i> {phone}
+        </li>
+        <li>
+          <i className="fa-solid fa-location-dot"></i> {city} {country}
+        </li>
+        <li>
+          Age: {age} <br /> Register Date:{date.slice(0, 10)}
+        </li>
       </ul>
     </div>
   );

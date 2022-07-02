@@ -15,11 +15,7 @@ function App() {
   useEffect(() => {
     getDataFromAPI();
   }, []);
-  return (
-    <div className="App">
-      <Card {...personData} />
-    </div>
-  );
+  return <div className="App">{personData && <Card {...personData} />}</div>;
 }
 
 export default App;
