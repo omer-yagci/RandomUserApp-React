@@ -10,28 +10,31 @@ const Card = ({
   location: { city, country },
 }) => {
   return (
-    <div className={classes.container}>
-      <img src={large} alt={first} />
-      <div>
-        <h5>
-          {title} {first} {last}
-        </h5>
+    <>
+      <div className={classes.container}>
+        <img src={large} alt={first} />
+        <div>
+          <h5>
+            {title} {first} {last}
+          </h5>
+        </div>
+        <ul className="list-container">
+          <li>
+            <i className="fa-solid fa-envelope-open-text"></i> {email}
+          </li>
+          <li>
+            <i className="fa-solid fa-phone-volume"></i> {phone}
+          </li>
+          <li>
+            <i className="fa-solid fa-location-dot"></i> {city} {country}
+          </li>
+          <li>
+            Age: {age} <br /> Register Date:{date.slice(0, 10)}
+          </li>
+        </ul>
       </div>
-      <ul className="list-container">
-        <li>
-          <i className="fa-solid fa-envelope-open-text"></i> {email}
-        </li>
-        <li>
-          <i className="fa-solid fa-phone-volume"></i> {phone}
-        </li>
-        <li>
-          <i className="fa-solid fa-location-dot"></i> {city} {country}
-        </li>
-        <li>
-          Age: {age} <br /> Register Date:{date.slice(0, 10)}
-        </li>
-      </ul>
-    </div>
+      <button className={classes.btn}>Random User</button>
+    </>
   );
 };
 
