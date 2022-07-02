@@ -8,9 +8,14 @@ const Card = ({
   registered: { age, date },
   name: { title, first, last },
   location: { city, country },
+  newPersonData,
+  setNewPersonData,
 }) => {
+  const clickHandler = () => {
+    setNewPersonData(!newPersonData);
+  };
   return (
-    <>
+    <div className="main">
       <div className={classes.container}>
         <img src={large} alt={first} />
         <div>
@@ -33,8 +38,10 @@ const Card = ({
           </li>
         </ul>
       </div>
-      <button className={classes.btn}>Random User</button>
-    </>
+      <button className={classes.btn} onClick={clickHandler}>
+        Random User
+      </button>
+    </div>
   );
 };
 

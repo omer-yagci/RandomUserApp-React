@@ -5,6 +5,7 @@ import Card from "./components/Card";
 
 function App() {
   const [personData, setPersonData] = useState();
+  const [newPersonData, setNewPersonData] = useState(false);
   const url = "https://randomuser.me/api/";
   const getDataFromAPI = async () => {
     const { data } = await axios.get(url);
@@ -14,8 +15,18 @@ function App() {
 
   useEffect(() => {
     getDataFromAPI();
-  }, []);
-  return <div className="App">{personData && <Card {...personData} />}</div>;
+  }, [newPersonData]);
+  return (
+    <div className="App">
+      {personData && (
+        <Card
+          {...personData}
+          setNewPersonData={setNewPersonData}
+          newPersonData={newPersonData}
+        />
+      )}
+    </div>
+  );
 }
 
 export default App;

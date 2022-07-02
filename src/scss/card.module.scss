@@ -26,3 +26,16 @@
     list-style: none;
   }
 }
+.btn {
+  background-color: lightblue;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  border: white;
+  margin: 0.5rem 10rem;
+  &:hover {
+    cursor: pointer;
+    background-color: black;
+    transform: scale(0.98);
+  }
+}
