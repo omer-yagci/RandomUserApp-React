@@ -1,0 +1,28 @@
+@import "./variables";
+
+.container {
+  background-color: $Abstract2-hex;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 6px 6px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: center;
+  max-width: 100%;
+  width: 30rem;
+  height: 40rem;
+  img {
+    width: 15rem;
+    border-radius: 50%;
+    background-color: royalblue;
+    margin: 1rem auto;
+    border: 1px solid black;
+  }
+
+  li {
+    font-size: 1.3rem;
+    text-align: left;
+    letter-spacing: 0.09rem;
+    border: 1px solid ridge;
+    padding: 0.5rem;
+    list-style: none;
+  }
+}

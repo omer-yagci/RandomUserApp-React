@@ -17,7 +17,7 @@ const Card = ({
           {title} {first} {last}
         </h5>
       </div>
-      <ul>
+      <ul className="list-container">
         <li>
           <i className="fa-solid fa-envelope-open-text"></i> {email}
         </li>
