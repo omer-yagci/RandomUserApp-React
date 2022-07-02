@@ -8,14 +8,18 @@ function App() {
   const url = "https://randomuser.me/api/";
   const getDataFromAPI = async () => {
     const { data } = await axios.get(url);
-    console.log(data);
-    setPersonData(data);
+    console.log(data.results[0]);
+    setPersonData(data.results[0]);
   };
 
   useEffect(() => {
     getDataFromAPI();
   }, []);
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Card {...personData} />
+    </div>
+  );
 }
 
 export default App;
